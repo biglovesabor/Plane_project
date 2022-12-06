@@ -134,7 +134,7 @@ dependencies {
     // 控件封装
     implementation project(':widget')
     // 友盟封装
-    implementation project(':umeng')
+//    implementation project(':umeng')
     implementation project(':libwebrtc')
     implementation project(':rtc-chat')
 

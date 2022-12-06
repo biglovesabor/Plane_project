@@ -21,15 +21,14 @@ import com.jiuhong.plane.ui.dialog.MessageDialog;
 import com.jiuhong.plane.ui.dialog.PayPasswordDialog;
 import com.jiuhong.plane.ui.dialog.SafeDialog;
 import com.jiuhong.plane.ui.dialog.SelectDialog;
-import com.jiuhong.plane.ui.dialog.ShareDialog;
 import com.jiuhong.plane.ui.dialog.TimeDialog;
 import com.jiuhong.plane.ui.dialog.UpdateDialog;
 import com.jiuhong.plane.ui.dialog.WaitDialog;
 import com.jiuhong.plane.ui.popup.ListPopup;
-import com.jiuhong.plane.wxapi.WXEntryActivity;
-import com.hjq.umeng.Platform;
-import com.hjq.umeng.UmengClient;
-import com.hjq.umeng.UmengShare;
+//import com.jiuhong.plane.wxapi.WXEntryActivity;
+//import com.hjq.umeng.Platform;
+//import com.hjq.umeng.UmengClient;
+//import com.hjq.umeng.UmengShare;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -407,36 +406,36 @@ public final class DialogActivity extends AppActivity {
 
         } else if (viewId == R.id.btn_dialog_share) {
 
-            toast("记得改好第三方 AppID 和 AppKey，否则会调不起来哦");
-            toast("也别忘了改微信 " + WXEntryActivity.class.getSimpleName() + " 类所在的包名哦");
-            // 分享对话框
-            new ShareDialog.Builder(this)
-                    // 分享标题
-                    .setShareTitle("Github")
-                    // 分享描述
-                    .setShareDescription("AndroidProject")
-                    // 分享缩略图
-                    .setShareLogo(R.mipmap.launcher_ic)
-                    // 分享链接
-                    .setShareUrl("https://github.com/getActivity/AndroidProject")
-                    .setListener(new UmengShare.OnShareListener() {
-
-                        @Override
-                        public void onSucceed(Platform platform) {
-                            toast("分享成功");
-                        }
-
-                        @Override
-                        public void onError(Platform platform, Throwable t) {
-                            toast("分享出错");
-                        }
-
-                        @Override
-                        public void onCancel(Platform platform) {
-                            toast("分享取消");
-                        }
-                    })
-                    .show();
+//            toast("记得改好第三方 AppID 和 AppKey，否则会调不起来哦");
+//            toast("也别忘了改微信 " + WXEntryActivity.class.getSimpleName() + " 类所在的包名哦");
+//            // 分享对话框
+//            new ShareDialog.Builder(this)
+//                    // 分享标题
+//                    .setShareTitle("Github")
+//                    // 分享描述
+//                    .setShareDescription("AndroidProject")
+//                    // 分享缩略图
+//                    .setShareLogo(R.mipmap.launcher_ic)
+//                    // 分享链接
+//                    .setShareUrl("https://github.com/getActivity/AndroidProject")
+//                    .setListener(new UmengShare.OnShareListener() {
+//
+//                        @Override
+//                        public void onSucceed(Platform platform) {
+//                            toast("分享成功");
+//                        }
+//
+//                        @Override
+//                        public void onError(Platform platform, Throwable t) {
+//                            toast("分享出错");
+//                        }
+//
+//                        @Override
+//                        public void onCancel(Platform platform) {
+//                            toast("分享取消");
+//                        }
+//                    })
+//                    .show();
 
         } else if (viewId == R.id.btn_dialog_update) {
 
@@ -515,7 +514,7 @@ public final class DialogActivity extends AppActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // 友盟分享回调
-        UmengClient.onActivityResult(this, requestCode, resultCode, data);
+//        UmengClient.onActivityResult(this, requestCode, resultCode, data);
     }
 
     @Override

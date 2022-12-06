@@ -29,13 +29,13 @@ import com.jiuhong.plane.manager.InputTextManager;
 import com.jiuhong.plane.other.IntentKey;
 import com.jiuhong.plane.other.KeyboardWatcher;
 import com.jiuhong.plane.ui.fragment.MeFragment;
-import com.jiuhong.plane.wxapi.WXEntryActivity;
+//import com.jiuhong.plane.wxapi.WXEntryActivity;
 import com.hjq.http.EasyConfig;
 import com.hjq.http.EasyHttp;
 import com.hjq.http.listener.HttpCallback;
-import com.hjq.umeng.Platform;
-import com.hjq.umeng.UmengClient;
-import com.hjq.umeng.UmengLogin;
+//import com.hjq.umeng.Platform;
+//import com.hjq.umeng.UmengClient;
+//import com.hjq.umeng.UmengLogin;
 import com.hjq.widget.view.SubmitButton;
 
 import okhttp3.Call;
@@ -47,8 +47,7 @@ import okhttp3.Call;
  *    desc   : 登录界面
  */
 public final class LoginActivity extends AppActivity
-        implements UmengLogin.OnLoginListener,
-        KeyboardWatcher.SoftKeyboardStateListener,
+        implements KeyboardWatcher.SoftKeyboardStateListener,
         TextView.OnEditorActionListener {
 
     @DebugLog
@@ -115,15 +114,15 @@ public final class LoginActivity extends AppActivity
                     .setListener(LoginActivity.this);
         }, 500);
 
-        // 判断用户当前有没有安装 QQ
-        if (!UmengClient.isAppInstalled(this, Platform.QQ)) {
-            mQQView.setVisibility(View.GONE);
-        }
+//        // 判断用户当前有没有安装 QQ
+//        if (!UmengClient.isAppInstalled(this, Platform.QQ)) {
+//            mQQView.setVisibility(View.GONE);
+//        }
 
-        // 判断用户当前有没有安装微信
-        if (!UmengClient.isAppInstalled(this, Platform.WECHAT)) {
-            mWeChatView.setVisibility(View.GONE);
-        }
+//        // 判断用户当前有没有安装微信
+//        if (!UmengClient.isAppInstalled(this, Platform.WECHAT)) {
+//            mWeChatView.setVisibility(View.GONE);
+//        }
 
         // 如果这两个都没有安装就隐藏提示
         if (mQQView.getVisibility() == View.GONE && mWeChatView.getVisibility() == View.GONE) {
@@ -219,85 +218,17 @@ public final class LoginActivity extends AppActivity
             return;
         }
 
-        if (view == mQQView || view == mWeChatView) {
-            toast("记得改好第三方 AppID 和 AppKey，否则会调不起来哦");
-            Platform platform;
-            if (view == mQQView) {
-                platform = Platform.QQ;
-            } else if (view == mWeChatView) {
-                platform = Platform.WECHAT;
-                toast("也别忘了改微信 " + WXEntryActivity.class.getSimpleName() + " 类所在的包名哦");
-            } else {
-                throw new IllegalStateException("are you ok?");
-            }
-            UmengClient.login(this, platform, this);
-        }
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // 友盟登录回调
-        UmengClient.onActivityResult(this, requestCode, resultCode, data);
+//        UmengClient.onActivityResult(this, requestCode, resultCode, data);
     }
 
-    /**
-     * {@link UmengLogin.OnLoginListener}
-     */
 
-    /**
-     * 授权成功的回调
-     *
-     * @param platform      平台名称
-     * @param data          用户资料返回
-     */
-    @Override
-    public void onSucceed(Platform platform, UmengLogin.LoginData data) {
-        if (isFinishing() || isDestroyed()) {
-            // Glide：You cannot start a load for a destroyed activity
-            return;
-        }
-
-        // 判断第三方登录的平台
-        switch (platform) {
-            case QQ:
-                break;
-            case WECHAT:
-                break;
-            default:
-                break;
-        }
-
-        GlideApp.with(this)
-                .load(data.getAvatar())
-                .circleCrop()
-                .into(mLogoView);
-
-        toast("昵称：" + data.getName() + "\n" + "性别：" + data.getSex());
-        toast("id：" + data.getId());
-        toast("token：" + data.getToken());
-    }
-
-    /**
-     * 授权失败的回调
-     *
-     * @param platform      平台名称
-     * @param t             错误原因
-     */
-    @Override
-    public void onError(Platform platform, Throwable t) {
-        toast("第三方登录出错：" + t.getMessage());
-    }
-
-    /**
-     * 授权取消的回调
-     *
-     * @param platform      平台名称
-     */
-    @Override
-    public void onCancel(Platform platform) {
-        toast("取消第三方登录");
-    }
 
     /**
      * {@link KeyboardWatcher.SoftKeyboardStateListener}

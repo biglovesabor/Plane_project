@@ -36,6 +36,8 @@ public final class HomeGrid2Caiji1Activity extends AppActivity {
     private TextView tv_view50;
     private TextView tv_view51;
     private Spinner spinner;
+    private TextView tv_qd;
+    private TextView tv_qx;
 
     @Override
     protected int getLayoutId() {
@@ -58,6 +60,9 @@ public final class HomeGrid2Caiji1Activity extends AppActivity {
         ll_view5 = findViewById(R.id.ll_view5);
         tv_view50 = findViewById(R.id.tv_view50);
         tv_view51 = findViewById(R.id.tv_view51);
+
+        tv_qd = findViewById(R.id.tv_qd);
+        tv_qx = findViewById(R.id.tv_qx);
 
         spinner = (Spinner) findViewById(R.id.spinner);
 
@@ -93,7 +98,7 @@ public final class HomeGrid2Caiji1Activity extends AppActivity {
 
 
 
-        setOnClickListener(ll_view1, ll_view2,ll_view3,ll_view4,ll_view5);
+        setOnClickListener(ll_view1, ll_view2,ll_view3,ll_view4,ll_view5,tv_qd,tv_qx);
 
         ll_view1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,9 +192,15 @@ public final class HomeGrid2Caiji1Activity extends AppActivity {
     @SingleClick
     @Override
     public void onClick(View view) {
-//        if (view==ll_right){
-//            ll_sx_view.setVisibility(View.VISIBLE);
-//        }
+        if (view==tv_qd){
+            Intent intent = new Intent(getContext(),HomeGrid2Caiji2Activity.class);
+            startActivity(intent);
+            overridePendingTransition(0,0);
+        }
+        if (view==tv_qx){
+            finish();
+            overridePendingTransition(0,0);
+        }
     }
 
 }

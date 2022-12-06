@@ -44,4 +44,31 @@
 
    </LinearLayout>
 
+   <LinearLayout
+       android:layout_marginTop="20dp"
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+      <TextView
+          android:id="@+id/tv_qd"
+          android:layout_marginRight="20dp"
+          android:gravity="center"
+          android:padding="15dp"
+          android:textColor="@color/white"
+          android:background="@drawable/shape_homecolor_5dpyuanjiao"
+          android:layout_width="120dp"
+          android:text="确定"
+          android:layout_height="wrap_content"/>
+      <TextView
+          android:id="@+id/tv_qx"
+          android:layout_marginLeft="20dp"
+          android:gravity="center"
+          android:padding="15dp"
+          android:textColor="@color/white"
+          android:background="@drawable/shape_lancolor_5dpyuanjiao"
+          android:layout_width="120dp"
+          android:text="返回"
+          android:layout_height="wrap_content"/>
+   </LinearLayout>
+
 </LinearLayout>
