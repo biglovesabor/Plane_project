@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App 样式中引用的颜色 -->
+    <color name="common_primary_color">@color/white</color>
+    <color name="common_primary_dark_color">@color/black</color>
+    <color name="common_accent_color">#5A8DDF</color>
+    <color name="common_window_background_color">#F4F4F4</color>
+    <color name="common_text_color">#333333</color>
+    <color name="common_text_hint_color">@color/panda</color>
+
+    <!-- 按钮按压时的颜色 -->
+    <color name="common_button_pressed_color">#AA5A8DDF</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="common_button_disable_color">#BBBBBB</color>
+    <!-- 分割线的颜色 -->
+    <color name="common_line_color">#ECECEC</color>
+    <!-- 矢量图标的颜色 -->
+    <color name="common_icon_color">#7C7C7C</color>
+
+    <!-- 对话框确认按钮的文本颜色 -->
+    <color name="common_confirm_text_color">#007AFF</color>
+    <!-- 对话框取消按钮的文本颜色 -->
+    <color name="common_cancel_text_color">#F44336</color>
+
+
+    <color name="colorPrimary">#1b82d2</color>       <!--toolbar-->
+    <color name="colorPrimaryDark">#1b82d2</color>   <!--status bar-->
+    <color name="colorAccent">#1b82d2</color>
+
+
+    <color name="av_bg_call_black">#281f1d</color>
+
+    <color name="home_text_color">#00A3A8</color>
+    <!-- 默认字体颜色 -->
+    <color name="moren_text">@color/panda</color>
+    <color name="sx_huitext">#f8f8f8</color>
+    <color name="lantext">#4F96F5</color>
+
+</resources>

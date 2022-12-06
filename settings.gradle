@@ -1,0 +1,6 @@
+include ':app'
+include ':base'
+include ':widget'
+include ':umeng'
+include ':libwebrtc'
+include ':rtc-chat'

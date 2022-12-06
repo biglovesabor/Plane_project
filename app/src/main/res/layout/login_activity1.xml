@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:layoutAnimation="@anim/from_bottom_layout"
+    android:orientation="vertical"
+
+    tools:layoutAnimation="@null">
+
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@mipmap/login_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@color/white"
+       android:paddingBottom="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/login_icon1"
+                android:layout_height="wrap_content"/>
+
+            <com.hjq.widget.view.ClearEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/common_phone_input_hint"
+                android:maxLength="11"
+                android:inputType="number"
+                android:singleLine="true" />
+        </LinearLayout>
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="40dp" />
+        <LinearLayout
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/login_icon2"
+                android:layout_height="wrap_content"/>
+
+            <com.hjq.widget.view.ClearEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入密码"
+                android:maxLength="11"
+                android:inputType="number"
+                android:singleLine="true" />
+        </LinearLayout>
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="40dp" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+           <LinearLayout
+               android:layout_marginRight="10dp"
+               android:layout_weight="1"
+               android:background="@drawable/shape_huicolor_5dpyuanjiao"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:layout_marginLeft="10dp"
+                   android:gravity="center"
+                   android:layout_width="wrap_content"
+                    android:text="IP:"
+                   android:layout_height="match_parent"/>
+               <EditText
+                   android:textSize="14sp"
+                   android:padding="10dp"
+                   android:background="@null"
+                   android:layout_width="match_parent"
+                   android:hint="IP地址"
+                   android:layout_height="wrap_content"/>
+           </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_huicolor_5dpyuanjiao"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:text="端口:"
+                    android:layout_height="match_parent"/>
+                <EditText
+                    android:textSize="14sp"
+                    android:padding="10dp"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:hint="端口号"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:background="@drawable/shape_loginbtn"
+            android:layout_marginTop="10dp"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
+
+
+
+</LinearLayout>
